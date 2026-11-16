@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AngelaMihomo · 星辰大海</title>
+<meta name="description" content="AngelaMihomo — 隐私优先、内核能力全显式的全平台代理客户端。真链式代理，十二星座主题，四平台同步。">
+<style>
+  :root{
+    --bg:#0b1026; --bg2:#111736; --card:rgba(255,255,255,.055);
+    --line:rgba(255,255,255,.12); --txt:#eef0ff; --dim:#a7add6;
+    --acc:#8f7bff; --acc2:#ffb35c; --good:#57d9a3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
+  .stars{position:fixed;inset:0;z-index:-1;background:
+    radial-gradient(1.5px 1.5px at 12% 22%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 32% 68%, #cfd4ff 50%, transparent 51%),
+    radial-gradient(1.8px 1.8px at 54% 14%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 71% 42%, #ffe1b0 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 86% 18%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 93% 63%, #cfd4ff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 44% 84%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 6% 78%, #ffe1b0 50%, transparent 51%),
+    linear-gradient(160deg, var(--bg) 0%, var(--bg2) 55%, #0a0e22 100%)}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+  header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .brand{font-weight:700;font-size:19px;letter-spacing:.5px}
+  .brand span{color:var(--acc2)}
+  .lang button{background:none;border:1px solid var(--line);color:var(--dim);border-radius:999px;padding:4px 14px;cursor:pointer;font-size:13px}
+  .lang button.on{color:var(--txt);border-color:var(--acc);background:rgba(143,123,255,.15)}
+  .hero{text-align:center;padding:64px 0 30px}
+  .hero .arrow{font-size:44px;color:var(--acc)}
+  .hero h1{font-size:46px;letter-spacing:1px;margin:10px 0 6px}
+  .hero h1 span{color:var(--acc2)}
+  .hero .sub{color:var(--dim);font-size:18px;max-width:640px;margin:0 auto}
+  .hero .theme{margin-top:14px;color:var(--acc);font-size:14px;letter-spacing:3px}
+  .cta{margin:30px 0 8px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 28px;border-radius:12px;text-decoration:none;font-weight:600;font-size:15px}
+  .btn.p{background:linear-gradient(120deg,var(--acc),#6a5cff);color:#fff}
+  .btn.g{border:1px solid var(--line);color:var(--txt);background:var(--card)}
+  .plats{color:var(--dim);font-size:13.5px;margin-top:10px}
+  section{padding:38px 0 6px}
+  h2{font-size:24px;margin-bottom:6px}
+  h2 .en{color:var(--acc);font-size:14px;letter-spacing:2px;display:block;font-weight:500}
+  .lead{color:var(--dim);max-width:720px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .card h3{font-size:17px;margin-bottom:6px}
+  .card h3 i{font-style:normal;color:var(--acc2);margin-right:8px}
+  .card p{color:var(--dim);font-size:14.5px}
+  .privacy{background:linear-gradient(120deg,rgba(87,217,163,.10),rgba(143,123,255,.10));border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:20px}
+  .privacy ul{list-style:none;margin-top:8px}
+  .privacy li{color:var(--dim);padding:3px 0}
+  .privacy li b{color:var(--good);font-weight:600;margin-right:8px}
+  footer{border-top:1px solid var(--line);margin-top:52px;padding:26px 0 40px;color:var(--dim);font-size:13.5px;text-align:center}
+  footer a{color:var(--acc);text-decoration:none}
+  .en-body{display:none}
+  body.show-en .zh-body{display:none}
+  body.show-en .en-body{display:block}
+  @media (max-width:560px){.hero h1{font-size:34px}.hero{padding-top:40px}}
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="wrap">
+  <header>
+    <div class="brand">Angela<span>Mihomo</span></div>
+    <div class="lang">
+      <button id="bZh" class="on" onclick="setLang('zh')">中文</button>
+      <button id="bEn" onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+
+  <!-- 中文 -->
+  <div class="zh-body">
+    <div class="hero">
+      <div class="arrow">➶</div>
+      <h1>Angela<span>Mihomo</span></h1>
+      <p class="sub">隐私优先的全平台代理客户端。导入订阅即可用，其余的交给它。</p>
+      <p class="theme">星 辰 大 海 · 十 二 星 座</p>
+      <div class="cta">
+        <a class="btn p" href="https://github.com/dukangalex/AngelaMihomo/releases/latest">下载最新版</a>
+        <a class="btn g" href="https://github.com/dukangalex/AngelaMihomo">GitHub 仓库</a>
+      </div>
+      <p class="plats">Android · Linux · macOS · Windows — 一个版本，一套功能，同步发布</p>
+    </div>
+
+    <section>
+      <h2><span class="en">FEATURES</span>把内核的能力，全摆到你面前</h2>
+      <p class="lead">基于 Mihomo 内核。内核能做的，都做成界面上点得到的选项，每项都带出处明确的说明；不藏能力，也不堆看不懂的术语。</p>
+      <div class="grid">
+        <div class="card"><h3><i>◆</i>真链式代理</h3><p>入口到出口的完整链路：入口失效整条链就断，绝不偷偷绕开入口直连。链路状态在配置卡上一眼可见，哪一端出了问题、怎么修，都写明白。</p></div>
+        <div class="card"><h3><i>◆</i>内核能力全显式</h3><p>模式、分流、DNS、测速——每一项能力都有唯一的生效路径，不冲突、不冗余。规则模式下，中国流量直连、其余走代理，是写死的底线。</p></div>
+        <div class="card"><h3><i>◆</i>零基础上手</h3><p>全新安装后，粘贴或扫码导入订阅就能直接跑起来：自动选可用节点、规则与中国适配默认到位，中途不需要你做任何技术决策。</p></div>
+        <div class="card"><h3><i>◆</i>十二星座主题</h3><p>「星辰大海之十二星座」主题家族：每套主题取一个星座的元素与意象，默认射手座·靛夜飞箭，十二套内置可切换。</p></div>
+        <div class="card"><h3><i>◆</i>测速看得懂</h3><p>全局联动测速只测不乱选；配置卡上的提示灯与实测同源：可用是绿、不可用是红、还没测是灰。开着的开关更亮，状态不造假。</p></div>
+        <div class="card"><h3><i>◆</i>长期平稳运行</h3><p>资源只投在本分能力上：连接稳定、订阅更新可靠、测速准确。验收包含内存与电量，不追面子功能。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="en">PRIVACY</span>隐私是前提，不是选项</h2>
+      <div class="privacy">
+        <ul>
+          <li><b>本地优先</b>地理位置查询全部在本地完成，零外发；能留在本机的数据就不出门。</li>
+          <li><b>全程脱敏</b>日志、诊断、导出在落盘前统一脱敏，订阅链接与凭据不会明文出现。</li>
+          <li><b>最小权限</b>非必要权限不索取；没有 AI 解读层，不把你的诊断数据发给任何第三方。</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- English -->
+  <div class="en-body">
+    <div class="hero">
+      <div class="arrow">➶</div>
+      <h1>Angela<span>Mihomo</span></h1>
+      <p class="sub">A privacy-first proxy client for every platform. Import your subscription and go — it handles the rest.</p>
+      <p class="theme">A SEA OF STARS · TWELVE CONSTELLATIONS</p>
+      <div class="cta">
+        <a class="btn p" href="https://github.com/dukangalex/AngelaMihomo/releases/latest">Download the latest release</a>
+        <a class="btn g" href="https://github.com/dukangalex/AngelaMihomo">GitHub repository</a>
+      </div>
+      <p class="plats">Android · Linux · macOS · Windows — one version, one feature set, released together</p>
+    </div>
+
+    <section>
+      <h2><span class="en">FEATURES</span>Every kernel capability, within reach</h2>
+      <p class="lead">Built on the Mihomo core. Everything the kernel can do is a tappable option in the UI, each with a sourced explanation — nothing hidden, nothing padded with jargon.</p>
+      <div class="grid">
+        <div class="card"><h3><i>◆</i>True chained proxy</h3><p>A complete entry-to-exit chain: if the entry dies, the whole chain stops — it never silently falls back to a direct connection. Chain health is visible on the config card, with the cause and the fix spelled out.</p></div>
+        <div class="card"><h3><i>◆</i>All capabilities explicit</h3><p>Modes, routing, DNS, speed tests — every behaviour has exactly one authoritative path, no conflicts, no duplicates. In rule mode, China traffic goes direct and everything else goes through the proxy. That line does not move.</p></div>
+        <div class="card"><h3><i>◆</i>Zero-setup start</h3><p>Install, paste or scan your subscription, and it just runs: a working node is picked automatically, rules and China adaptation are in place by default, and no technical decision is ever pushed onto you.</p></div>
+        <div class="card"><h3><i>◆</i>Twelve constellation themes</h3><p>The “Sea of Stars” theme family: one theme per constellation, drawn from its element and imagery. Sagittarius · Indigo Night Arrow is the default; all twelve are built in.</p></div>
+        <div class="card"><h3><i>◆</i>Honest status</h3><p>Linked speed tests measure without silently re-picking your node. The indicator light shares the same source as the measurement: green when usable, red when not, grey when untested.</p></div>
+        <div class="card"><h3><i>◆</i>Built to run for years</h3><p>Effort goes into the fundamentals: stable connections, reliable subscription updates, accurate tests — verified against memory and battery, not feature lists.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="en">PRIVACY</span>Privacy is the premise, not an option</h2>
+      <div class="privacy">
+        <ul>
+          <li><b>Local first</b>Geo lookups run entirely on-device with zero outbound queries. Data that can stay on your machine does.</li>
+          <li><b>Redacted by default</b>Logs, diagnostics and exports are scrubbed before they are written — no subscription links or credentials in plain text.</li>
+          <li><b>Minimal permissions</b>No unnecessary permissions, no AI layer, and your diagnostics are never sent to a third party.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>AngelaMihomo · GPL-3.0 ·
+      <a href="https://github.com/dukangalex/AngelaMihomo">GitHub</a> ·
+      <a href="https://t.me/AngelaNexus">Telegram 频道</a>
+    </p>
+    <p style="margin-top:6px">仅在 GitHub 分发 · Distributed via GitHub only</p>
+  </footer>
+</div>
+<script>
+  function setLang(l){
+    document.body.classList.toggle('show-en', l==='en');
+    document.getElementById('bZh').classList.toggle('on', l==='zh');
+    document.getElementById('bEn').classList.toggle('on', l==='en');
+    document.documentElement.lang = l==='en' ? 'en' : 'zh-CN';
+  }
+</script>
+</body>
+</html>
