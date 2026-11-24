@@ -127,6 +127,33 @@
   .u424-it.open .u424-a p{opacity:1;transform:none;transition:opacity .35s var(--ux-ease) .1s,transform .5s cubic-bezier(.3,1.4,.5,1) .08s}
   @media (prefers-reduced-motion:reduce){.u424-a,.u424-a p,.u424-pm::before,.u424-pm::after{transition:none!important}}
 
+
+  /* ===== 使用指南 / 排错（本页自排步骤时间线，沿用页面卡片样式；
+     与 #424 手风琴区分：全展开静态列表，读完即用，不点开合） ===== */
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+  .gsteps{list-style:none;margin-top:22px;position:relative}
+  .gsteps::before{content:"";position:absolute;left:19px;top:16px;bottom:16px;width:2px;background:linear-gradient(180deg,var(--acc),rgba(143,123,255,.12))}
+  .gstep{position:relative;padding:0 0 14px 58px}
+  .gstep:last-child{padding-bottom:0}
+  .gstep .num{position:absolute;left:0;top:4px;width:40px;height:40px;border-radius:50%;background:linear-gradient(120deg,var(--acc),#6a5cff);color:#fff;font-weight:700;font-size:17px;display:grid;place-items:center;box-shadow:0 0 0 5px var(--bg)}
+  .gstep .body{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 12px}
+  .gstep h3{font-size:16.5px;margin-bottom:6px}
+  .gstep p{color:var(--dim);font-size:14.5px;padding:2.5px 0}
+  .gstep p b{font-weight:700}
+  .gstep .gloss{color:var(--txt);background:rgba(143,123,255,.10);border-radius:10px;padding:8px 12px;margin-bottom:8px}
+  .lb-do{color:var(--acc2)}
+  .lb-ok{color:var(--good)}
+  .lb-fix{color:#ff9db0}
+  .tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:20px}
+  .tcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+  .tcard h3{font-size:15.5px;margin-bottom:4px}
+  .tcard h3 i{font-style:normal;color:#ff9db0;margin-right:8px}
+  .tcard ol{margin:4px 0 2px 20px;color:var(--dim);font-size:14px}
+  .tcard li{padding:2.5px 0}
+  .bridge{margin-top:18px;color:var(--dim)}
+  .bridge a{color:var(--acc);text-decoration:none;font-weight:600}
+
   /* Lucian UX/UI Prompt #435 · MIT License */
   .u435-rg{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;width:min(430px,calc(100vw - 32px));height:76px;padding:0;z-index:60;pointer-events:none}
   .u435-t{position:absolute;left:0;right:0;bottom:0;height:56px;display:flex;align-items:center;gap:11px;padding:0 8px 0 14px;border-radius:16px;background:var(--ux-surface);box-shadow:0 0 0 1px var(--ux-line-2),0 14px 30px -14px var(--ux-shadow-strong),0 2px 6px -2px var(--ux-shadow);transform-origin:50% 100%;transform:translate3d(var(--x,0px),var(--y,0px),0) scale(var(--s,1));opacity:var(--o,1);transition:transform .62s cubic-bezier(.3,1.42,.52,1),opacity .3s var(--ux-ease);touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;pointer-events:auto;color:var(--ux-ink)}
@@ -189,6 +216,8 @@
       <div class="cta">
         <a class="btn p" data-dl href="https://github.com/dukangalex/AngelaMihomo/releases/latest">下载最新版</a>
         <a class="btn g" href="https://github.com/dukangalex/AngelaMihomo">GitHub 仓库</a>
+        <a class="btn g" href="#guide">使用指南</a>
+        <a class="btn g" href="https://github.com/dukangalex/AngelaMihomo">GitHub 仓库</a>
       </div>
       <p class="plats">Android · Linux · macOS · Windows — 一个版本，一套功能，同步发布</p>
     </div>
@@ -231,6 +260,94 @@
       </div>
     </section>
 
+    <section id="guide">
+      <h2><span class="en">USER GUIDE</span>使用指南 · 装好之后怎么用</h2>
+      <p class="lead">下载那一步管「装上」，这一部分管「装上之后」：五步走完就能正常上网。每一步都写了点哪里、什么样算成功、不对劲先看哪；术语第一次出现，都配了一句人话解释。</p>
+      <ol class="gsteps">
+        <li class="gstep"><span class="num">1</span><div class="body">
+          <h3>导入订阅</h3>
+          <p class="gloss">先说人话：订阅是服务商给你的一串链接，里面装着全部节点。导入它，等于把节点一次性装进来。</p>
+          <p><b class="lb-do">点哪里</b>　打开 App，底部点「配置」→「添加」，四个入口选一个：事先复制好链接就点「剪切板」；有二维码点「二维码」扫；也可以点「URL」手动粘贴、点「文件」选配置文件。</p>
+          <p><b class="lb-ok">算成功</b>　配置页出现一张新的配置卡，点一下它设为当前配置；回到首页，首页卡上能看到这份订阅的到期日和用量。</p>
+          <p><b class="lb-fix">不对劲</b>　提示链接不对，多半是没复制全、或复制的根本不是订阅链接，重新复制再试；还是不行，翻下面排错第 1 条。</p>
+        </div></li>
+        <li class="gstep"><span class="num">2</span><div class="body">
+          <h3>选节点与策略组</h3>
+          <p class="gloss">先说人话：策略组是按用途分好的节点组（比如按地区、按应用分）。你在组里点哪个节点，流量就从哪个节点出去。</p>
+          <p><b class="lb-do">点哪里</b>　底部点「代理」，点开一个策略组，再点你想用的那个节点。</p>
+          <p><b class="lb-ok">算成功</b>　首页卡上的节点名变成你选的节点，旁边的状态灯是绿色，还带着一个延迟数字（比如 120ms，数字越小越快）。</p>
+          <p><b class="lb-fix">不对劲</b>　灯是灰的，说明还没测过，点一下状态灯就会测速（只测，不会替你换节点）；灯是红的、或节点显示 Timeout，说明这个节点不通，换一个。</p>
+        </div></li>
+        <li class="gstep"><span class="num">3</span><div class="body">
+          <h3>模式与规则</h3>
+          <p class="gloss">先说人话：模式决定流量怎么走。「规则模式」是 App 自动分流——国内网站直连、其余走代理，日常用它就对了；「全局」是全部走代理；「直连」是全部不走代理。</p>
+          <p><b class="lb-do">点哪里</b>　不用去设置里翻：首页卡的下半区就是模式切换，点「规则」。</p>
+          <p><b class="lb-ok">算成功</b>　模式停在「规则」上；国内网站打开快，国外网站也能正常打开。</p>
+          <p><b class="lb-fix">不对劲</b>　国内网站变慢，先看模式是不是被切到了「全局」（排错第 6 条）；国外网站打不开，先看节点的状态灯是不是红的。</p>
+        </div></li>
+        <li class="gstep"><span class="num">4</span><div class="body">
+          <h3>链式代理怎么开</h3>
+          <p class="gloss">先说人话：链式代理是让流量先经过一个入口节点、再从一个出口节点出去，串成两段。一般人用不上，有固定出口需求时再开。</p>
+          <p><b class="lb-do">点哪里</b>　「配置」页点开配置卡的菜单 →「链式代理」→ 打开开关；先选入口（当前配置里的节点或组），再选出口（从另一个配置里选节点或组）。</p>
+          <p><b class="lb-ok">算成功</b>　配置卡上链路状态正常，网页照常打开。</p>
+          <p><b class="lb-fix">不对劲</b>　入口失效，整条链会直接断开，不会偷偷改成直连——这是故意的，防的是流量走错路。看到「入口 / 出口已不在配置中」的提示，是订阅更新后原来的选择没了，回链式设置重选（排错第 7 条）。</p>
+        </div></li>
+        <li class="gstep"><span class="num">5</span><div class="body">
+          <h3>更新订阅与日常维护</h3>
+          <p><b class="lb-do">点哪里</b>　订阅更新在「配置」页：点开配置卡菜单 →「同步」立即更新；在编辑配置里还能打开自动更新、设定间隔。App 本身更新：从 GitHub Releases 下载新版，或在「关于」页点检查更新。</p>
+          <p><b class="lb-ok">算成功</b>　首页卡上的更新时间变成刚刚，到期日和已用流量跟着当前订阅刷新，和你买的套餐对得上。</p>
+          <p><b class="lb-fix">不对劲</b>　同步失败会弹窗写明原因，照提示处理；更新完发现分组和以前不一样，先翻排错第 5 条，多半是正常变化。</p>
+        </div></li>
+      </ol>
+      <p class="bridge">五步都走完还是不对劲？别瞎猜，按症状翻下面的<a href="#trouble">排错表</a>，照顺序查，查到哪步好了就停。</p>
+    </section>
+
+    <section id="trouble">
+      <h2><span class="en">TROUBLESHOOTING</span>排错 · 按症状对号入座</h2>
+      <p class="lead">找到和你情况最像的一条，从第 1 步开始往下查，每做一步就试一下，好就停，不用全做完。</p>
+      <div class="tgrid">
+        <div class="tcard"><h3><i>✚</i>1 · 订阅导入失败，或导入后是空的</h3><ol>
+          <li>重新到服务商页面复制完整的订阅链接，回 App 点「剪切板」导入——App 会校验剪贴板里是不是链接，提示不对就是没复制对。</li>
+          <li>剪切板不行，换「URL」手动粘贴，或用「二维码」扫码导入。</li>
+          <li>拉订阅本身需要网络：换个网络（Wi-Fi 与移动数据互换）再试一次。</li>
+          <li>导入成功但里面没有节点：多半是订阅到期或流量用尽，看首页卡上的到期日和用量确认；没到期就联系服务商查订阅状态。</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>2 · 连上了，但网页打不开</h3><ol>
+          <li>看首页卡状态灯：红灯说明当前节点不通，去「代理」页换一个延迟数字正常的节点。</li>
+          <li>点一下状态灯重新测速，确认换好的节点是绿灯。</li>
+          <li>还打不开：更新一次订阅（配置页 → 配置卡菜单 → 同步），再重新选节点。</li>
+          <li>只有某一个网站打不开、其他都正常：换个节点再试那个网站。</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>3 · 节点大片超时（Timeout）</h3><ol>
+          <li>先换网络：Wi-Fi 和移动数据互换，再点状态灯重新测速——大片超时常常出在本地网络。</li>
+          <li>更新订阅（配置页 → 同步），排除节点列表过旧。</li>
+          <li>还是一片 Timeout：多半是服务商的节点集体故障，先挑个别能用的顶着，过段时间再测，或联系服务商。</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>4 · 延迟异常高</h3><ol>
+          <li>在「代理」页点开策略组，选延迟数字更小的节点（数字就是毫秒，越小越快）。</li>
+          <li>订阅里有「自动选择」组的话切过去，它会自动挑当前最快的节点。</li>
+          <li>换个网络再测一次对比：延迟高也可能出在你本地网络，不全是节点的问题。</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>5 · 更新订阅后，分组和以前不一样</h3><ol>
+          <li>先别慌：服务商调整了节点和分组，App 只是照新内容显示，这是正常变化，重新选一次节点即可。</li>
+          <li>如果分组还是旧的、一点没变：那是没刷新过来——到配置页对配置卡点「同步」手动更新。</li>
+          <li>同步后退出配置页再重新进入，让界面按新内容重新加载。</li>
+          <li>开了链式代理的：分组改名会让原来的入口 / 出口失效，出现断链提示时按第 7 条重选。</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>6 · 国内网站打开慢</h3><ol>
+          <li>先看模式：首页卡模式区应在「规则」。如果在「全局」，所有流量都绕代理，国内网站必然慢——切回「规则」。</li>
+          <li>模式没错还慢：更新一次订阅（配置页 → 同步），拿到最新的分流规则。</li>
+          <li>只有个别国内网站慢、其他都快：多半是那个网站自身的问题，换个时间再试。</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>7 · 链式代理断链</h3><ol>
+          <li>先看提示写的是哪一头：「入口已不在当前配置中」或「出口已不存在」——意思是订阅更新后，你原来选的节点或组被改名或删掉了。</li>
+          <li>到「配置」页 → 配置卡菜单 →「链式代理」，把失效的那一头重新选一个现在有的节点或组，保存。</li>
+          <li>暂时不用链式：直接关掉链式开关，先恢复普通用法。</li>
+          <li>断链时网页打不开是预期行为：入口失效整条链就断，App 不会偷偷改直连，重选或关掉就好。</li>
+        </ol></div>
+      </div>
+    </section>
+
     <section>
       <h2><span class="en">FAQ</span>常见问题</h2>
       <!-- Lucian UX/UI Prompt #424 · MIT License -->
@@ -255,6 +372,8 @@
       <p class="theme">A SEA OF STARS · TWELVE CONSTELLATIONS</p>
       <div class="cta">
         <a class="btn p" data-dl href="https://github.com/dukangalex/AngelaMihomo/releases/latest">Download the latest release</a>
+        <a class="btn g" href="https://github.com/dukangalex/AngelaMihomo">GitHub repository</a>
+        <a class="btn g" href="#guide-en">User Guide</a>
         <a class="btn g" href="https://github.com/dukangalex/AngelaMihomo">GitHub repository</a>
       </div>
       <p class="plats">Android · Linux · macOS · Windows — one version, one feature set, released together</p>
@@ -295,6 +414,94 @@
         <div class="u393-mt"></div>
         <div class="u393-st"></div>
         <div class="u393-ar" aria-hidden="true"><svg viewBox="0 0 26 26"><path d="M5 21L20 6M11 6h9v9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Open here</div>
+      </div>
+    </section>
+
+    <section id="guide-en">
+      <h2><span class="en">USER GUIDE</span>After install: how to actually use it</h2>
+      <p class="lead">The download section gets the app onto your device; this part is about what comes after. Five steps take you from importing a subscription to day-to-day upkeep. Each step says where to tap, what success looks like, and what to check first when something's off — and every term is explained in plain words the first time it appears.</p>
+      <ol class="gsteps">
+        <li class="gstep"><span class="num">1</span><div class="body">
+          <h3>Import your subscription</h3>
+          <p class="gloss">In plain words: a subscription is a link from your provider that carries the whole node list. Importing it loads everything at once.</p>
+          <p><b class="lb-do">Where</b>　Open the app, tap Profiles at the bottom, then Add. Four ways in: copy the link first and tap Clipboard; tap QR Code to scan one; or paste the link under URL, or pick a config file under File.</p>
+          <p><b class="lb-ok">Success</b>　A new profile card appears on the Profiles page. Tap it to make it the active profile; the home card then shows that subscription's expiry date and data usage.</p>
+          <p><b class="lb-fix">If not</b>　If it says the link isn't right, the copy was probably incomplete, or wasn't a subscription link at all — copy it again and retry. Still failing? See problem 1 below.</p>
+        </div></li>
+        <li class="gstep"><span class="num">2</span><div class="body">
+          <h3>Pick a node and a policy group</h3>
+          <p class="gloss">In plain words: a policy group is a set of nodes grouped by purpose (by region, by app, and so on). Whichever node you tap inside the group is the one your traffic leaves through.</p>
+          <p><b class="lb-do">Where</b>　Tap Proxies at the bottom, open a group, and tap the node you want.</p>
+          <p><b class="lb-ok">Success</b>　The home card shows that node's name, with a green status light and a delay number next to it (e.g. 120ms — smaller is faster).</p>
+          <p><b class="lb-fix">If not</b>　A grey light means "not tested yet" — tap the light to run a test (it only measures; it never switches your node for you). A red light, or a Timeout label on the node, means that node is down — pick another one.</p>
+        </div></li>
+        <li class="gstep"><span class="num">3</span><div class="body">
+          <h3>Mode and rules</h3>
+          <p class="gloss">In plain words: the mode decides how traffic flows. Rule mode lets the app split it automatically — domestic sites go direct, everything else goes through the proxy; that's the one for daily use. Global sends everything through the proxy; Direct sends nothing through it.</p>
+          <p><b class="lb-do">Where</b>　No settings dive needed: the mode switch sits in the lower half of the home card. Tap Rule.</p>
+          <p><b class="lb-ok">Success</b>　The mode stays on Rule; domestic sites load fast and foreign sites open normally.</p>
+          <p><b class="lb-fix">If not</b>　Domestic sites suddenly slow? Check the mode hasn't been switched to Global (problem 6). A foreign site won't open? Check whether the node light is red first.</p>
+        </div></li>
+        <li class="gstep"><span class="num">4</span><div class="body">
+          <h3>Turn on chained proxy</h3>
+          <p class="gloss">In plain words: a chained proxy routes traffic through an entry node first, then out through an exit node — two hops in a row. Most people never need it; turn it on only if you need a fixed exit.</p>
+          <p><b class="lb-do">Where</b>　On the Profiles page, open the profile card's menu → Chained Proxy → switch it on. Pick the entry (a node or group from the current profile), then the exit (a node or group from another profile).</p>
+          <p><b class="lb-ok">Success</b>　The profile card shows the chain as healthy, and pages load as usual.</p>
+          <p><b class="lb-fix">If not</b>　If the entry dies, the whole chain stops — it never quietly falls back to a direct connection, and that's on purpose, so traffic can't take the wrong road. A notice saying the entry or exit is no longer in the profile means a subscription update removed your pick; reselect it in chain settings (problem 7).</p>
+        </div></li>
+        <li class="gstep"><span class="num">5</span><div class="body">
+          <h3>Update subscriptions and routine upkeep</h3>
+          <p><b class="lb-do">Where</b>　Subscription updates live on the Profiles page: open the profile card's menu → Sync for an immediate update; in Edit Profile you can also enable auto-update and set its interval. App updates: grab the new build from GitHub Releases, or use Check for Updates on the About page.</p>
+          <p><b class="lb-ok">Success</b>　The home card's update time becomes "just now", and the expiry date and used traffic refresh to match the subscription you actually bought.</p>
+          <p><b class="lb-fix">If not</b>　A failed sync pops up a notice stating the reason — follow what it says. Groups look different after an update? See problem 5 first; it's usually a normal change.</p>
+        </div></li>
+      </ol>
+      <p class="bridge">Done all five and something still feels wrong? Don't guess — find your symptom in the <a href="#trouble-en">troubleshooting table</a> below and work down its steps; stop as soon as it's fixed.</p>
+    </section>
+
+    <section id="trouble-en">
+      <h2><span class="en">TROUBLESHOOTING</span>Troubleshooting · find your symptom</h2>
+      <p class="lead">Find the entry closest to what you see, start at step 1, and test after each step. Stop as soon as it works — you don't have to finish the list.</p>
+      <div class="tgrid">
+        <div class="tcard"><h3><i>✚</i>1 · Import fails, or the imported profile is empty</h3><ol>
+          <li>Copy the full subscription link again from your provider, then import via Clipboard — the app checks that the clipboard really holds a link, so a warning means the copy was wrong.</li>
+          <li>If Clipboard won't take it, paste it under URL instead, or scan the QR code.</li>
+          <li>Fetching a subscription needs a working network: switch between Wi-Fi and mobile data and try again.</li>
+          <li>Imported fine but no nodes inside: the subscription has most likely expired or run out of traffic — check the expiry date and usage on the home card; if it's still valid, ask your provider about the subscription's status.</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>2 · Connected, but pages won't load</h3><ol>
+          <li>Check the status light on the home card: red means the current node is down — go to Proxies and pick a node with a healthy delay number.</li>
+          <li>Tap the status light to re-test, and confirm the new node shows green.</li>
+          <li>Still stuck: update the subscription (Profiles → profile card menu → Sync), then pick a node again.</li>
+          <li>Only one site fails while everything else works: switch nodes and try that site again.</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>3 · Lots of nodes time out (Timeout)</h3><ol>
+          <li>Switch networks first — Wi-Fi ↔ mobile data — then tap the status light to re-test. Mass timeouts are often your local network.</li>
+          <li>Update the subscription (Profiles → Sync) to rule out a stale node list.</li>
+          <li>Still timing out everywhere: the provider's nodes are most likely down as a group. Use whichever node still works, then retest later or contact the provider.</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>4 · Delay is unusually high</h3><ol>
+          <li>Open the group on the Proxies page and pick a node with a smaller delay number (the number is milliseconds — smaller is faster).</li>
+          <li>If your subscription has an "Auto" group, switch to it — it keeps picking the currently fastest node for you.</li>
+          <li>Retest on a different network: high delay can come from your local connection, not the node.</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>5 · Groups look different after a subscription update</h3><ol>
+          <li>Don't panic: your provider changed their nodes and groups, and the app is simply showing the new content. Just pick your node again.</li>
+          <li>If nothing changed at all and the old groups are still there, the refresh didn't land — open the profile card menu on the Profiles page and tap Sync manually.</li>
+          <li>After syncing, leave the Profiles page and come back so the UI reloads with the new content.</li>
+          <li>Using a chained proxy? A renamed group can invalidate your entry/exit picks — if you get a chain-broken notice, reselect them per problem 7.</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>6 · Domestic sites load slowly</h3><ol>
+          <li>Check the mode first: the home card's mode area should say Rule. On Global, every byte detours through the proxy and domestic sites crawl — switch back to Rule.</li>
+          <li>Mode is right but it's still slow: update the subscription (Profiles → Sync) to pick up the latest routing rules.</li>
+          <li>Only one domestic site is slow while others are fine: that's most likely the site itself — try again later.</li>
+        </ol></div>
+        <div class="tcard"><h3><i>✚</i>7 · Chained proxy is broken</h3><ol>
+          <li>Read which end the notice names: the entry is no longer in the current profile, or the exit profile/target is gone — a subscription update renamed or deleted what you had picked.</li>
+          <li>Go to Profiles → profile card menu → Chained Proxy, and reselect the broken end from the nodes and groups that exist now, then save.</li>
+          <li>Don't need the chain right now? Just switch chained proxy off and go back to normal use.</li>
+          <li>Pages failing while the chain is broken is expected: a dead entry stops the whole chain, and the app never falls back to direct silently. Reselect or switch it off and you're back.</li>
+        </ol></div>
       </div>
     </section>
 
