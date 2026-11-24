@@ -59,6 +59,113 @@
   body.show-en .zh-body{display:none}
   body.show-en .en-body{display:block}
   @media (max-width:560px){.hero h1{font-size:34px}.hero{padding-top:40px}}
+
+  /* ===== 组件库移植 · 主题变量映射（--ux-* → 本页主题） ===== */
+  :root{
+    --ux-surface:#171d3d; --ux-surface-2:rgba(255,255,255,.08); --ux-surface-3:rgba(255,255,255,.15);
+    --ux-ink:var(--txt); --ux-ink-2:var(--dim); --ux-ink-3:#7e86b8;
+    --ux-line:var(--line); --ux-line-2:rgba(255,255,255,.22);
+    --ux-accent:var(--acc); --ux-accent-soft:rgba(143,123,255,.14); --ux-accent-ink:#fff;
+    --ux-mint:var(--good);
+    --ux-shadow:rgba(0,0,0,.35); --ux-shadow-strong:rgba(0,0,0,.55);
+    --ux-ease:cubic-bezier(.2,.8,.2,1); --ux-spring:cubic-bezier(.34,1.45,.64,1);
+  }
+
+  /* Lucian UX/UI Prompt #393 · MIT License */
+  .u393{position:relative;width:100%;max-width:560px;margin:22px auto 0;padding:26px 18px 24px;border-radius:30px;overflow:hidden;background:radial-gradient(70% 50% at 50% 0%,var(--ux-accent-soft),transparent 70%),var(--ux-surface);box-shadow:0 0 0 1px var(--ux-line),0 30px 60px -36px var(--ux-shadow-strong);color:var(--ux-ink);text-align:center}
+  .u393-tp small{font-size:10px;font-weight:850;letter-spacing:.08em;color:var(--ux-accent)}
+  .u393-tp h3{margin:4px 0 0;font-size:20px;font-weight:900;letter-spacing:-.035em}
+  .u393-tl{position:relative;display:flex;width:min(430px,100%);margin:16px auto 0;padding:3px;border-radius:12px;background:var(--ux-surface-2);box-shadow:inset 0 0 0 1px var(--ux-line)}
+  .u393-pl{position:absolute;left:3px;top:3px;bottom:3px;width:calc((100% - 6px) / 4);border-radius:9px;background:var(--ux-surface);box-shadow:0 1px 4px -1px var(--ux-shadow-strong),0 0 0 1px var(--ux-line);transition:transform .35s cubic-bezier(.3,1.3,.5,1)}
+  .u393-tb{position:relative;flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;height:30px;border:0;border-radius:9px;background:none;color:var(--ux-ink-3);font:inherit;font-size:11px;font-weight:800;cursor:pointer;transition:color .2s}
+  .u393-tb[aria-selected="true"]{color:var(--ux-ink)}
+  .u393-tb svg{width:13px;height:13px;flex:none}
+  .u393-dl{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;width:236px;max-width:100%;height:54px;margin-top:18px;border:0;border-radius:16px;background:var(--ux-ink);color:var(--bg);font:inherit;font-size:14px;font-weight:850;cursor:pointer;overflow:hidden;text-decoration:none;transition:background .35s,transform .15s}
+  .u393-dl:active{transform:scale(.98)}
+  .u393-dl.is-ok{background:var(--ux-mint);color:#0b1026}
+  .u393-sw{position:relative;display:block;height:22px;overflow:hidden}
+  .u393-sw>span{display:flex;align-items:center;justify-content:center;gap:9px;height:22px;transition:transform .4s cubic-bezier(.3,1.3,.5,1),opacity .3s}
+  .u393-sw>span.is-in{position:absolute;left:0;right:0;top:0;transform:translateY(100%);opacity:0;transition:none}
+  .u393-sw>span.is-out{transform:translateY(-100%);opacity:0}
+  .u393-sw svg{width:18px;height:18px;flex:none}
+  .u393-mt{position:relative;height:16px;margin-top:9px;overflow:hidden;font-size:10.5px;font-weight:700;color:var(--ux-ink-3)}
+  .u393-mt>span{position:absolute;left:0;right:0;top:0;transition:transform .4s cubic-bezier(.3,1.3,.5,1),opacity .3s}
+  .u393-mt>span.is-in{transform:translateY(100%);opacity:0;transition:none}
+  .u393-mt>span.is-out{transform:translateY(-100%);opacity:0}
+  .u393-st{display:flex;justify-content:center;gap:8px;margin-top:16px;text-align:left}
+  .u393-sp{flex:1;padding:9px 9px;border-radius:12px;background:var(--ux-surface-2);box-shadow:inset 0 0 0 1px var(--ux-line);opacity:.4;transform:translateY(6px);transition:opacity .35s,transform .45s cubic-bezier(.3,1.4,.5,1),box-shadow .3s}
+  .u393-sp.is-on{opacity:1;transform:none;box-shadow:inset 0 0 0 1.5px var(--ux-accent)}
+  .u393-sp i{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--ux-accent);color:#fff;font-style:normal;font-size:9.5px;font-weight:900}
+  .u393-sp b{display:block;margin-top:5px;font-size:10.5px;font-weight:850}
+  .u393-sp small{display:block;margin-top:1px;font-size:9px;line-height:1.3;font-weight:650;color:var(--ux-ink-3)}
+  .u393-ar{position:absolute;right:16px;top:12px;display:flex;flex-direction:column;align-items:flex-end;gap:2px;color:var(--ux-accent);font-size:9.5px;font-weight:850;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .4s;pointer-events:none}
+  .u393.is-got .u393-ar{opacity:1;transform:none}
+  .u393-ar svg{width:26px;height:26px;animation:u393-bo .8s ease-in-out infinite alternate}
+  @keyframes u393-bo{to{transform:translate(3px,-4px)}}
+  .u393 button:focus-visible,.u393-dl:focus-visible{outline:2px solid var(--ux-accent);outline-offset:2px}
+  @media (prefers-reduced-motion: reduce){.u393-pl,.u393-sw>span,.u393-mt>span,.u393-sp,.u393-ar{transition:none}.u393-ar svg{animation:none}}
+
+  /* Lucian UX/UI Prompt #424 · MIT License */
+  .u424{position:relative;width:100%;margin-top:22px;color:var(--ux-ink)}
+  .u424-ls{width:100%;max-width:720px;margin:0 auto;padding:6px;border-radius:20px;background:var(--ux-surface);box-shadow:0 0 0 1px var(--ux-line),0 1px 2px var(--ux-shadow),0 20px 40px -26px var(--ux-shadow-strong);list-style:none}
+  .u424-it+.u424-it{box-shadow:0 -1px 0 var(--ux-line)}
+  .u424-q{display:flex;align-items:center;gap:12px;width:100%;min-height:50px;padding:8px 10px 8px 14px;border:0;border-radius:14px;background:none;font-family:inherit;font-size:14.5px;font-weight:650;letter-spacing:-.02em;color:var(--ux-ink);text-align:left;cursor:pointer;transition:background-color .2s}
+  .u424-q:hover{background:var(--ux-surface-2)}
+  .u424-q span{flex:1}
+  .u424-q:focus-visible{outline:2px solid var(--ux-accent);outline-offset:-2px}
+  .u424-pm{position:relative;width:26px;height:26px;flex:none;border-radius:50%;background:var(--ux-surface-2);transition:background-color .3s,transform .5s var(--ux-spring)}
+  .u424-q:hover .u424-pm{transform:scale(1.08)}
+  .u424-pm::before,.u424-pm::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.75px;margin:-.875px 0 0 -5px;border-radius:2px;background:var(--ux-ink);transition:transform .55s cubic-bezier(.3,1.6,.5,1),background-color .3s}
+  .u424-pm::after{transform:rotate(90deg)}
+  .u424-it.open .u424-pm{background:var(--ux-ink)}
+  .u424-it.open .u424-pm::before,.u424-it.open .u424-pm::after{background:var(--ux-surface)}
+  .u424-it.open .u424-pm::after{transform:rotate(180deg)}
+  .u424-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.25,1,.35,1)}
+  .u424-it.open .u424-a{grid-template-rows:1fr}
+  .u424-a>div{min-height:0;overflow:hidden}
+  .u424-a p{margin:0;padding:0 46px 14px 14px;font-size:13px;line-height:1.6;color:var(--ux-ink-2);opacity:0;transform:translateY(-6px);transition:opacity .2s,transform .3s var(--ux-ease)}
+  .u424-it.open .u424-a p{opacity:1;transform:none;transition:opacity .35s var(--ux-ease) .1s,transform .5s cubic-bezier(.3,1.4,.5,1) .08s}
+  @media (prefers-reduced-motion:reduce){.u424-a,.u424-a p,.u424-pm::before,.u424-pm::after{transition:none!important}}
+
+  /* Lucian UX/UI Prompt #435 · MIT License */
+  .u435-rg{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;width:min(430px,calc(100vw - 32px));height:76px;padding:0;z-index:60;pointer-events:none}
+  .u435-t{position:absolute;left:0;right:0;bottom:0;height:56px;display:flex;align-items:center;gap:11px;padding:0 8px 0 14px;border-radius:16px;background:var(--ux-surface);box-shadow:0 0 0 1px var(--ux-line-2),0 14px 30px -14px var(--ux-shadow-strong),0 2px 6px -2px var(--ux-shadow);transform-origin:50% 100%;transform:translate3d(var(--x,0px),var(--y,0px),0) scale(var(--s,1));opacity:var(--o,1);transition:transform .62s cubic-bezier(.3,1.42,.52,1),opacity .3s var(--ux-ease);touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;pointer-events:auto;color:var(--ux-ink)}
+  .u435-t.is-drag{transition:opacity .3s var(--ux-ease);cursor:grabbing}
+  .u435-t>*{transition:opacity .25s var(--ux-ease)}
+  .u435-t.is-back>*{opacity:0}
+  .u435-ic{position:relative;flex:none;width:22px;height:22px}
+  .u435-ic>span{position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;background:var(--ux-mint);color:var(--ux-surface)}
+  .u435-ic svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+  .u435-ic .ok path{stroke-dasharray:18;stroke-dashoffset:18;animation:u435-draw .4s var(--ux-ease) .22s forwards}
+  .u435-t.is-in .u435-ic{animation:u435-pop .5s cubic-bezier(.34,1.7,.5,1) .08s both}
+  @keyframes u435-draw{to{stroke-dashoffset:0}}
+  @keyframes u435-pop{from{transform:scale(.3)}}
+  .u435-tx{flex:1;min-width:0;font-size:13.5px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .u435-x{flex:none;width:26px;height:26px;padding:0;border:0;border-radius:8px;display:grid;place-items:center;background:none;color:var(--ux-ink-3);cursor:pointer;transition:background-color .15s,color .15s}
+  .u435-x:hover{background:var(--ux-surface-2);color:var(--ux-ink)}
+  .u435-x svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round}
+  .u435-x:focus-visible{outline:2px solid var(--ux-accent);outline-offset:1px}
+  .u435-pb{position:absolute;left:16px;right:16px;bottom:0;height:2px;border-radius:2px;overflow:hidden}
+  .u435-pb i{display:block;height:100%;border-radius:inherit;background:var(--ux-mint);opacity:.75;transform-origin:0 50%;animation:u435-pb linear forwards}
+  .u435-rg.is-paused .u435-pb i{animation-play-state:paused}
+  @keyframes u435-pb{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+  @media (prefers-reduced-motion:reduce){.u435-pb{display:none}}
+
+  /* Lucian UX/UI Prompt #450 · MIT License */
+  .u450-top{position:fixed;right:22px;bottom:22px;z-index:55;width:44px;height:44px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:var(--ux-surface);color:var(--ux-ink);box-shadow:0 0 0 1px var(--ux-line),0 10px 22px -12px var(--ux-shadow-strong);overflow:hidden;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(10px) scale(.6);transition:transform .35s var(--ux-ease),opacity .25s,visibility 0s .35s}
+  .u450-top.is-show{opacity:1;visibility:visible;transform:none;transition:transform .5s var(--ux-spring),opacity .25s,visibility 0s}
+  .u450-top:hover{transform:translateY(-2px)}
+  .u450-top:active{transform:scale(.92)}
+  .u450-top>*{grid-area:1/1}
+  .u450-top svg.rg{position:absolute;inset:0;width:44px;height:44px;transform:rotate(-90deg)}
+  .u450-top .rg circle{fill:none;stroke-width:2.5}
+  .u450-top .rg .tr{stroke:var(--ux-line)}
+  .u450-top .rg .pr{stroke:var(--ux-accent);stroke-linecap:round;stroke-dasharray:122.5;stroke-dashoffset:calc(122.5 * (1 - var(--p,0)));transition:stroke-dashoffset var(--pd,.8s) cubic-bezier(.4,0,.2,1)}
+  .u450-top svg.ar{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .u450-top.is-fly svg.ar{animation:u450-fly .7s cubic-bezier(.5,0,.3,1)}
+  @keyframes u450-fly{45%{transform:translateY(-30px);opacity:0}46%{transform:translateY(26px);opacity:0}}
+  .u450-top:focus-visible{outline:2px solid var(--ux-accent);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){.u450-top svg.ar{animation:none}}
 </style>
 </head>
 <body>
@@ -80,7 +187,7 @@
       <p class="sub">隐私优先的全平台代理客户端。导入订阅即可用，其余的交给它。</p>
       <p class="theme">星 辰 大 海 · 十 二 星 座</p>
       <div class="cta">
-        <a class="btn p" href="https://github.com/dukangalex/AngelaMihomo/releases/latest">下载最新版</a>
+        <a class="btn p" data-dl href="https://github.com/dukangalex/AngelaMihomo/releases/latest">下载最新版</a>
         <a class="btn g" href="https://github.com/dukangalex/AngelaMihomo">GitHub 仓库</a>
       </div>
       <p class="plats">Android · Linux · macOS · Windows — 一个版本，一套功能，同步发布</p>
@@ -109,6 +216,34 @@
         </ul>
       </div>
     </section>
+
+    <section>
+      <h2><span class="en">DOWNLOAD</span>下载 · 按你的设备来</h2>
+      <p class="lead">已按你正在用的设备预选了推荐项，也可以切换到其他平台。所有安装包都从 GitHub Releases 获取。</p>
+      <!-- Lucian UX/UI Prompt #393 · MIT License -->
+      <div class="ux u393" data-lang="zh">
+        <div class="u393-tp"><small>四平台同步发布</small><h3>选你的设备，装好就能用</h3></div>
+        <div class="u393-tl" role="tablist" aria-label="操作系统"><span class="u393-pl" aria-hidden="true"></span></div>
+        <div><a class="u393-dl" data-dl href="https://github.com/dukangalex/AngelaMihomo/releases/latest" target="_blank" rel="noopener"><span class="u393-sw"></span></a></div>
+        <div class="u393-mt"></div>
+        <div class="u393-st"></div>
+        <div class="u393-ar" aria-hidden="true"><svg viewBox="0 0 26 26"><path d="M5 21L20 6M11 6h9v9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>在这里打开</div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="en">FAQ</span>常见问题</h2>
+      <!-- Lucian UX/UI Prompt #424 · MIT License -->
+      <div class="ux u424">
+        <ul class="u424-ls">
+          <li class="u424-it"><button class="u424-q" type="button" aria-expanded="false"><span>AngelaMihomo 是什么？</span><i class="u424-pm" aria-hidden="true"></i></button><div class="u424-a" role="region"><div><p>基于 Mihomo 内核的跨平台代理客户端：把内核能力全部做成界面上点得到的选项，导入订阅即可用。开源，遵循 GPL-3.0 协议。</p></div></div></li>
+          <li class="u424-it"><button class="u424-q" type="button" aria-expanded="false"><span>支持哪些平台？收费吗？</span><i class="u424-pm" aria-hidden="true"></i></button><div class="u424-a" role="region"><div><p>Android、Linux、macOS、Windows 四个平台，一个版本、一套功能、同步发布。完全免费，仅在 GitHub 分发。</p></div></div></li>
+          <li class="u424-it"><button class="u424-q" type="button" aria-expanded="false"><span>怎么更新到新版本？</span><i class="u424-pm" aria-hidden="true"></i></button><div class="u424-a" role="region"><div><p>新版本统一发布在 GitHub Releases，从本页的下载入口就能拿到最新版；应用内也可以检查更新。</p></div></div></li>
+          <li class="u424-it"><button class="u424-q" type="button" aria-expanded="false"><span>Windows 安装有什么建议？</span><i class="u424-pm" aria-hidden="true"></i></button><div class="u424-a" role="region"><div><p>建议把安装目录选在非 C 盘（例如 D 盘），省去系统盘的空间与权限麻烦；另有便携版可免安装直接运行。</p></div></div></li>
+          <li class="u424-it"><button class="u424-q" type="button" aria-expanded="false"><span>我的数据会被上传吗？</span><i class="u424-pm" aria-hidden="true"></i></button><div class="u424-a" role="region"><div><p>不会。地理位置查询全部在本地完成、零外发；日志、诊断、导出在落盘前统一脱敏，订阅链接与凭据不会明文出现；没有 AI 解读层把你的数据发给任何第三方。</p></div></div></li>
+        </ul>
+      </div>
+    </section>
   </div>
 
   <!-- English -->
@@ -119,7 +254,7 @@
       <p class="sub">A privacy-first proxy client for every platform. Import your subscription and go — it handles the rest.</p>
       <p class="theme">A SEA OF STARS · TWELVE CONSTELLATIONS</p>
       <div class="cta">
-        <a class="btn p" href="https://github.com/dukangalex/AngelaMihomo/releases/latest">Download the latest release</a>
+        <a class="btn p" data-dl href="https://github.com/dukangalex/AngelaMihomo/releases/latest">Download the latest release</a>
         <a class="btn g" href="https://github.com/dukangalex/AngelaMihomo">GitHub repository</a>
       </div>
       <p class="plats">Android · Linux · macOS · Windows — one version, one feature set, released together</p>
@@ -148,6 +283,34 @@
         </ul>
       </div>
     </section>
+
+    <section>
+      <h2><span class="en">DOWNLOAD</span>Get it for your device</h2>
+      <p class="lead">Your device is pre-selected below — switch platforms anytime. All packages are served from GitHub Releases.</p>
+      <!-- Lucian UX/UI Prompt #393 · MIT License -->
+      <div class="ux u393" data-lang="en">
+        <div class="u393-tp"><small>ONE RELEASE, FOUR PLATFORMS</small><h3>Pick your device, install, go</h3></div>
+        <div class="u393-tl" role="tablist" aria-label="Operating system"><span class="u393-pl" aria-hidden="true"></span></div>
+        <div><a class="u393-dl" data-dl href="https://github.com/dukangalex/AngelaMihomo/releases/latest" target="_blank" rel="noopener"><span class="u393-sw"></span></a></div>
+        <div class="u393-mt"></div>
+        <div class="u393-st"></div>
+        <div class="u393-ar" aria-hidden="true"><svg viewBox="0 0 26 26"><path d="M5 21L20 6M11 6h9v9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Open here</div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="en">FAQ</span>Frequently asked questions</h2>
+      <!-- Lucian UX/UI Prompt #424 · MIT License -->
+      <div class="ux u424">
+        <ul class="u424-ls">
+          <li class="u424-it"><button class="u424-q" type="button" aria-expanded="false"><span>What is AngelaMihomo?</span><i class="u424-pm" aria-hidden="true"></i></button><div class="u424-a" role="region"><div><p>A cross-platform proxy client built on the Mihomo core: every kernel capability is a tappable option in the UI, and importing a subscription is all it takes to start. Open source under GPL-3.0.</p></div></div></li>
+          <li class="u424-it"><button class="u424-q" type="button" aria-expanded="false"><span>Which platforms are supported? Is it free?</span><i class="u424-pm" aria-hidden="true"></i></button><div class="u424-a" role="region"><div><p>Android, Linux, macOS and Windows — one version, one feature set, released together. Completely free, distributed via GitHub only.</p></div></div></li>
+          <li class="u424-it"><button class="u424-q" type="button" aria-expanded="false"><span>How do I update?</span><i class="u424-pm" aria-hidden="true"></i></button><div class="u424-a" role="region"><div><p>New versions are published on GitHub Releases — the download buttons on this page always point at the latest one — and the app can check for updates itself.</p></div></div></li>
+          <li class="u424-it"><button class="u424-q" type="button" aria-expanded="false"><span>Any tips for installing on Windows?</span><i class="u424-pm" aria-hidden="true"></i></button><div class="u424-a" role="region"><div><p>Pick an install folder on a non-C drive (for example D:) to avoid system-drive space and permission hassles. A portable build is also available if you prefer not to install.</p></div></div></li>
+          <li class="u424-it"><button class="u424-q" type="button" aria-expanded="false"><span>Is my data uploaded anywhere?</span><i class="u424-pm" aria-hidden="true"></i></button><div class="u424-a" role="region"><div><p>No. Geo lookups run entirely on-device with zero outbound queries; logs, diagnostics and exports are redacted before they are written, so subscription links and credentials never appear in plain text; and there is no AI layer sending your data to a third party.</p></div></div></li>
+        </ul>
+      </div>
+    </section>
   </div>
 
   <footer>
@@ -158,13 +321,266 @@
     <p style="margin-top:6px">仅在 GitHub 分发 · Distributed via GitHub only</p>
   </footer>
 </div>
+
+<!-- Lucian UX/UI Prompt #435 · MIT License -->
+<section class="u435-rg" id="u435Rg" aria-label="通知 / Notifications"></section>
+<!-- Lucian UX/UI Prompt #450 · MIT License -->
+<button type="button" class="u450-top" id="u450Top" aria-label="回到顶部"><svg class="rg" viewBox="0 0 44 44" aria-hidden="true"><circle class="tr" cx="22" cy="22" r="19.5"/><circle class="pr" cx="22" cy="22" r="19.5"/></svg><svg class="ar" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 14.5V4M4.5 8 9 3.5 13.5 8"/></svg></button>
 <script>
   function setLang(l){
     document.body.classList.toggle('show-en', l==='en');
     document.getElementById('bZh').classList.toggle('on', l==='zh');
     document.getElementById('bEn').classList.toggle('on', l==='en');
     document.documentElement.lang = l==='en' ? 'en' : 'zh-CN';
+    var tb = document.getElementById('u450Top'); if (tb) tb.setAttribute('aria-label', l==='en' ? 'Back to top' : '回到顶部');
   }
 </script>
+
+<script>
+  /* ===== 组件库移植脚本 ===== */
+  var uxRM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Lucian UX/UI Prompt #393 · MIT License —— 按设备下载指引（每种语言一份实例） */
+  var U393_DATA = {
+    zh: {
+      os: [['Android', '下载 Android 版', 'APK · arm64 / armv7 / x86_64 / 通用包'],
+           ['Windows', '下载 Windows 版', '安装版 .exe · 便携版 .zip · 含 ARM64'],
+           ['macOS', '下载 macOS 版', 'DMG · Intel / Apple Silicon'],
+           ['Linux', '下载 Linux 版', 'DEB · RPM · AppImage']],
+      steps: [['打开文件', '打开刚下载的安装包'], ['安装', 'Windows 建议选非 C 盘目录'], ['导入订阅', '粘贴或扫码导入，即刻可用']],
+      got: '已打开下载页'
+    },
+    en: {
+      os: [['Android', 'Download for Android', 'APK · arm64 / armv7 / x86_64 / universal'],
+           ['Windows', 'Download for Windows', 'Setup .exe · Portable .zip · ARM64 included'],
+           ['macOS', 'Download for macOS', 'DMG · Intel / Apple Silicon'],
+           ['Linux', 'Download for Linux', 'DEB · RPM · AppImage']],
+      steps: [['Open the file', 'Open the installer you downloaded'], ['Install', 'On Windows, pick a non-C drive folder'], ['Import & go', 'Paste or scan your subscription']],
+      got: 'Download page opened'
+    }
+  };
+  var U393_IC = [
+    '<svg viewBox="0 0 18 18" aria-hidden="true"><rect x="5.2" y="2" width="7.6" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.8 13.8h2.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+    '<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2.5 4l5.5-.8v5.3H2.5zM9.3 3l6.2-.9v6.4H9.3zM2.5 9.6H8v5.2l-5.5-.8zM9.3 9.6h6.2V16l-6.2-.9z" fill="currentColor"/></svg>',
+    '<svg viewBox="0 0 18 18" aria-hidden="true"><rect x="2.5" y="3.5" width="13" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M1 14.5h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    '<svg viewBox="0 0 18 18" aria-hidden="true"><rect x="2" y="3" width="14" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5 7.5l2 1.5-2 1.5M8.5 11.5h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  ];
+  var U393_CHK = '<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9.5l3.2 3.2L14 5.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  function initU393(root) {
+    var D = U393_DATA[root.getAttribute('data-lang') || 'zh'];
+    var tl = root.querySelector('.u393-tl'), pl = root.querySelector('.u393-pl'), dl = root.querySelector('.u393-dl'), sw = root.querySelector('.u393-sw'), mt = root.querySelector('.u393-mt'), st = root.querySelector('.u393-st');
+    var T = D.os.map(function (o, i) {
+      var b = document.createElement('button'); b.type = 'button'; b.className = 'u393-tb'; b.setAttribute('role', 'tab'); b.innerHTML = U393_IC[i] + '<span></span>'; b.lastChild.textContent = o[0];
+      b.addEventListener('click', function () { pick(i); });
+      tl.appendChild(b); return b;
+    });
+    var S = D.steps.map(function (s, i) { var d = document.createElement('div'); d.className = 'u393-sp'; d.innerHTML = '<i>' + (i + 1) + '</i><b></b><small></small>'; d.querySelector('b').textContent = s[0]; d.querySelector('small').textContent = s[1]; st.appendChild(d); return d; });
+    function swap(box, html) {
+      var old = box.firstElementChild, nw = document.createElement('span'); nw.innerHTML = html;
+      if (!old || uxRM) { box.innerHTML = ''; box.appendChild(nw); return; }
+      nw.className = 'is-in'; box.appendChild(nw); void nw.offsetWidth; nw.className = ''; old.className = 'is-out'; setTimeout(function () { old.remove(); }, 420);
+    }
+    var cur = -1, got = false, sub = [];
+    function reset() { got = false; root.classList.remove('is-got'); dl.classList.remove('is-ok'); sub.forEach(clearTimeout); sub = []; S.forEach(function (s) { s.classList.remove('is-on'); }); }
+    function pick(i) {
+      if (i === cur) return;
+      cur = i; reset();
+      T.forEach(function (t, k) { t.setAttribute('aria-selected', String(k === i)); t.tabIndex = k === i ? 0 : -1; });
+      pl.style.transform = 'translateX(' + i * 100 + '%)';
+      swap(sw, U393_IC[i] + '<span></span>'); sw.lastElementChild.lastChild.textContent = D.os[i][1];
+      swap(mt, ''); mt.lastElementChild.textContent = D.os[i][2];
+    }
+    dl.addEventListener('click', function () {
+      if (got) return;
+      got = true; dl.classList.add('is-ok'); root.classList.add('is-got');
+      swap(sw, U393_CHK + '<span></span>'); sw.lastElementChild.lastChild.textContent = D.got;
+      S.forEach(function (s, k) { sub.push(setTimeout(function () { s.classList.add('is-on'); }, uxRM ? 0 : 350 + k * 450)); });
+    });
+    /* 按 UA 预选设备：Android → Windows → macOS → Linux */
+    var ua = navigator.userAgent || '';
+    var guess = /Android/i.test(ua) ? 0 : /Win/i.test(ua) ? 1 : /Mac/i.test(ua) ? 2 : 3;
+    pick(guess);
+  }
+  document.querySelectorAll('.u393').forEach(initU393);
+
+  /* Lucian UX/UI Prompt #424 · MIT License —— FAQ 手风琴（每种语言一份实例） */
+  function initU424(root) {
+    var its = Array.prototype.slice.call(root.querySelectorAll('.u424-it'));
+    var qs = its.map(function (it) { return it.querySelector('.u424-q'); });
+    var uid = 'u424-' + Math.random().toString(36).slice(2, 7);
+    its.forEach(function (it, i) {
+      var a = it.querySelector('.u424-a');
+      qs[i].id = uid + '-q' + i; a.id = uid + '-a' + i;
+      qs[i].setAttribute('aria-controls', a.id); a.setAttribute('aria-labelledby', qs[i].id);
+      a.inert = true;
+    });
+    function toggle(i) {
+      its.forEach(function (it, k) {
+        var v = k === i && !it.classList.contains('open');
+        it.classList.toggle('open', v);
+        qs[k].setAttribute('aria-expanded', String(v));
+        it.querySelector('.u424-a').inert = !v;
+      });
+    }
+    qs.forEach(function (q, i) {
+      q.addEventListener('click', function () { toggle(i); });
+      q.addEventListener('keydown', function (e) {
+        var n = qs.length, to = e.key === 'ArrowDown' ? i + 1 : e.key === 'ArrowUp' ? i - 1 : e.key === 'Home' ? 0 : e.key === 'End' ? n - 1 : null;
+        if (to === null) return;
+        e.preventDefault(); qs[(to + n) % n].focus();
+      });
+    });
+  }
+  document.querySelectorAll('.u424').forEach(initU424);
+
+  /* Lucian UX/UI Prompt #435 · MIT License —— 下载反馈 Toast（去掉演示用的「撤销」，下载无法撤销） */
+  var u435Rg = document.getElementById('u435Rg');
+  var U435_H = 56, U435_GAP = 8, U435_LIFE = 4500, U435_MAX = 3;
+  var u435Toasts = [], u435Open = false, u435Paused = false;
+  function u435Layout() {
+    var live = u435Toasts.filter(function (t) { return !t.gone; }), n = live.length;
+    live.forEach(function (t, k) {
+      var i = n - 1 - k;
+      var y = u435Open ? -i * (U435_H + U435_GAP) : -i * 11, s = u435Open ? 1 : 1 - i * 0.055;
+      t.el.style.setProperty('--y', y + 'px');
+      t.el.style.setProperty('--s', s.toFixed(3));
+      t.el.style.setProperty('--o', i < U435_MAX ? 1 : 0);
+      t.el.style.zIndex = String(20 - i);
+      t.el.classList.toggle('is-back', !u435Open && i > 0);
+    });
+    u435Rg.style.height = (u435Open && n > 1 ? n * U435_H + (n - 1) * U435_GAP : U435_H + 20) + 'px';
+  }
+  function u435Timer(t) {
+    clearTimeout(t.tm);
+    t.t0 = Date.now();
+    if (!u435Paused) t.tm = setTimeout(function () { if (u435Rg.isConnected) u435Dismiss(t); }, t.left);
+  }
+  function u435Bar(t, ms) {
+    var pb = t.el.querySelector('.u435-pb');
+    pb.innerHTML = '<i style="animation-duration:' + ms + 'ms"></i>';
+    t.left = ms;
+    u435Timer(t);
+  }
+  function u435Show(msg) {
+    var closeLabel = document.body.classList.contains('show-en') ? 'Dismiss' : '关闭通知';
+    var el = document.createElement('div');
+    el.className = 'u435-t';
+    el.setAttribute('role', 'status');
+    el.innerHTML = '<span class="u435-ic" aria-hidden="true"><span class="ok"><svg viewBox="0 0 24 24"><path d="m6 12.5 4 4 8-9"/></svg></span></span>' +
+      '<span class="u435-tx"></span><button type="button" class="u435-x"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><span class="u435-pb" aria-hidden="true"></span>';
+    el.querySelector('.u435-tx').textContent = msg;
+    el.querySelector('.u435-x').setAttribute('aria-label', closeLabel);
+    var t = { el: el };
+    el.querySelector('.u435-x').addEventListener('click', function () { u435Dismiss(t); });
+    el.addEventListener('pointerenter', function () { u435SetOpen(true); });
+    el.addEventListener('pointerleave', function () { setTimeout(function () { if (!u435Rg.contains(document.activeElement)) u435SetOpen(false); }, 120); });
+    u435Swipe(t);
+    u435Toasts.push(t);
+    if (!uxRM) {
+      el.classList.add('is-in');
+      el.style.setProperty('--y', '84px'); el.style.setProperty('--s', '.9'); el.style.setProperty('--o', '0');
+      el.style.transition = 'none';
+      u435Rg.appendChild(el);
+      void el.offsetWidth;
+      el.style.transition = '';
+    } else u435Rg.appendChild(el);
+    u435Bar(t, U435_LIFE);
+    var live = u435Toasts.filter(function (x) { return !x.gone; });
+    if (live.length > U435_MAX) u435Dismiss(live[0], 0, true);
+    u435Layout();
+    return t;
+  }
+  function u435Dismiss(t, dir, quiet) {
+    if (t.gone) return;
+    t.gone = true;
+    clearTimeout(t.tm);
+    var el = t.el;
+    if (el.contains(document.activeElement)) { var other = u435Toasts.filter(function (x) { return !x.gone; }).pop(); if (other) other.el.querySelector('.u435-x').focus({ preventScroll: true }); }
+    el.style.pointerEvents = 'none';
+    var done = function () { el.remove(); var i = u435Toasts.indexOf(t); if (i >= 0) u435Toasts.splice(i, 1); };
+    u435Layout();
+    if (uxRM || !el.animate) { done(); return; }
+    var y = el.style.getPropertyValue('--y') || '0px', s = el.style.getPropertyValue('--s') || '1';
+    if (dir) {
+      var v = Math.max(1.2, Math.abs(t.v || 0)), dist = 380, dur = Math.max(160, Math.min(320, dist / v));
+      el.classList.add('is-drag');
+      el.animate([{ transform: 'translate3d(' + (t.dx || 0) + 'px,' + y + ',0) scale(' + s + ')', opacity: 1 }, { transform: 'translate3d(' + dir * dist + 'px,' + y + ',0) scale(' + s + ') rotate(' + dir * 6 + 'deg)', opacity: 0 }], { duration: dur, easing: 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' }).onfinish = done;
+    } else {
+      el.animate([{ opacity: quiet ? 0 : 1 }, { transform: 'translate3d(0,calc(' + y + ' + 14px),0) scale(' + (s * 0.94) + ')', opacity: 0 }], { duration: 260, easing: 'cubic-bezier(.4,0,.6,1)', fill: 'forwards' }).onfinish = done;
+    }
+  }
+  function u435Swipe(t) {
+    var el = t.el, on = false, x0 = 0, last = [];
+    el.addEventListener('pointerdown', function (e) {
+      if (e.button !== 0 || e.target.closest('button') || t.gone) return;
+      on = true; x0 = e.clientX; t.dx = 0; t.v = 0; last = [[e.clientX, e.timeStamp]];
+      el.classList.add('is-drag');
+      try { el.setPointerCapture(e.pointerId); } catch (er) { /* 忽略 */ }
+    });
+    el.addEventListener('pointermove', function (e) {
+      if (!on) return;
+      t.dx = e.clientX - x0;
+      last.push([e.clientX, e.timeStamp]);
+      if (last.length > 5) last.shift();
+      el.style.setProperty('--x', t.dx.toFixed(1) + 'px');
+      el.style.opacity = String(Math.max(0.35, 1 - Math.abs(t.dx) / 320));
+    });
+    var end = function () {
+      if (!on) return;
+      on = false;
+      var a = last[0], b = last[last.length - 1];
+      t.v = b && a && b[1] > a[1] ? (b[0] - a[0]) / (b[1] - a[1]) : 0;
+      el.style.opacity = '';
+      if (Math.abs(t.dx) > 80 || Math.abs(t.v) > 0.6) { u435Dismiss(t, (Math.abs(t.v) > 0.6 ? t.v : t.dx) > 0 ? 1 : -1); return; }
+      el.classList.remove('is-drag');
+      el.style.setProperty('--x', '0px');
+      t.dx = 0;
+    };
+    el.addEventListener('pointerup', end);
+    el.addEventListener('pointercancel', end);
+  }
+  function u435SetOpen(v) {
+    if (u435Open === v) return;
+    u435Open = v;
+    u435Paused = v;
+    u435Rg.classList.toggle('is-paused', v);
+    u435Toasts.forEach(function (t) {
+      if (t.gone) return;
+      if (v) { clearTimeout(t.tm); t.left = Math.max(500, t.left - (Date.now() - t.t0)); } else u435Timer(t);
+    });
+    u435Layout();
+  }
+  u435Rg.addEventListener('focusin', function () { u435SetOpen(true); });
+  u435Rg.addEventListener('focusout', function (e) { if (!u435Rg.contains(e.relatedTarget)) u435SetOpen(false); });
+  u435Rg.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    var el = e.target.closest('.u435-t'), t = u435Toasts.filter(function (x) { return x.el === el; })[0];
+    if (t && !t.gone) { e.preventDefault(); e.stopPropagation(); u435Dismiss(t); }
+  });
+  /* 点任意下载链接 → Toast 反馈（文案随当前页面语言） */
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[data-dl]') : null;
+    if (!a) return;
+    u435Show(document.body.classList.contains('show-en') ? 'Download page opened · pick your platform package there' : '已打开下载页 · 在列表里选你的平台安装包');
+  });
+
+  /* Lucian UX/UI Prompt #450 · MIT License —— 回到顶部（只取回顶按钮；客服聊天 FAB 与本站无关，未取） */
+  var u450Top = document.getElementById('u450Top');
+  function u450OnScroll() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - window.innerHeight;
+    var y = window.scrollY || 0;
+    u450Top.style.setProperty('--pd', '120ms');
+    u450Top.style.setProperty('--p', (max > 0 ? Math.min(1, y / max) : 0).toFixed(3));
+    u450Top.classList.toggle('is-show', y > 400);
+  }
+  window.addEventListener('scroll', u450OnScroll, { passive: true });
+  u450OnScroll();
+  u450Top.addEventListener('click', function () {
+    u450Top.classList.remove('is-fly'); void u450Top.offsetWidth; u450Top.classList.add('is-fly');
+    window.scrollTo({ top: 0, behavior: uxRM ? 'auto' : 'smooth' });
+  });
+</script>
+
 </body>
 </html>
